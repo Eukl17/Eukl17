@@ -8,18 +8,26 @@ import random
 import string
 
 
-def nouveau_graphe(nombre_sommets=8, oriente=False):
+def nouveau_graphe(nombre_sommets=8, oriente=False, alphabetique=False):
 	g = dict()
 
 	if not (nombre_sommets in range(2, 26)):
 		return g
+
+	if alphabetique:
+		noms = list(string.ascii_uppercase[0:nombre_sommets])
+	else:
+		noms = list(string.ascii_uppercase)
 
 	sommets = list()
 
 	for _ in range(nombre_sommets):
 		ok = False
 		while (not ok):
-			s = random.choice(list(string.ascii_uppercase))
+			if alphabetique:
+				s = random.choice(noms)
+			else:
+				s = random.choice(noms)
 			ok = not(s in sommets)
 		sommets.append(s)
 
@@ -54,7 +62,7 @@ def afficher_graphe(g):
 
 
 if __name__ == "__main__":
-	g = nouveau_graphe(6, True)
+	g = nouveau_graphe(6, False, True)
 	afficher_graphe(g)
 
 
