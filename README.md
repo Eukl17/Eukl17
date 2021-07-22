@@ -17,4 +17,4 @@ Here are some ideas to get you started:
 
 ### Salut !
 
-De quoi programmer un peu avec Python3.
+De quoi programmer un peu, essentiellement avec Python&nbsp;3.
